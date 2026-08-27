@@ -10,12 +10,28 @@ engine weights verified attestations fully and discounts unsigned ones (0.25×).
 Backward compatible — existing unsigned submissions still work, recorded as
 `unverified`.
 
+**Since first submission — proven wallets and self-serve spend:**
+
+- **Wallet proof (EIP-191).** An agent proves it controls the wallet it claims
+  by signing a server-issued challenge with `personal_sign` (chain `4663`,
+  domain-bound, 600s TTL). The private key never leaves the wallet, and proof
+  status is a public read — a payer deciding whether to release funds needs to
+  know whether the address it is about to pay was ever proven. Scope is
+  deliberately narrow: this proves wallet control, not trustworthiness.
+- **Self-serve permissions.** Granting a budget, spending, scoping payees,
+  setting expiry and revoking no longer need a platform admin key. The trust
+  tier is the access control: below EMERGING (score 250) a grant is refused
+  with `409 tier_too_low`. An agent earns its budget rather than being handed
+  one, and the API is usable by agents that are not us.
+
 ## Proof
 - Animated demo: `assets/kairune-verify-demo.mp4`
 - Live console: https://kairune.online/app
-- API meta (shows `signature_algorithm: ed25519`): https://kairune.online/api/meta
+- API meta (`wallet_proof: eip191-personal-sign`, `signature_algorithm: ed25519`): https://kairune.online/api/meta
 - Example trust card: https://kairune.online/a/voyager-07
+- API docs: https://kairune.online/docs
 - Source: https://github.com/kairunedev/Kairune
+- Wallet proof + self-serve PR: https://github.com/kairunedev/Kairune/pull/7
 
 ## EconomyOS primitives
 ACP job (4 paid offerings on Robinhood Chain via Virtuals), Agent Token
