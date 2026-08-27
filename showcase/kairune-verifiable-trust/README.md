@@ -23,8 +23,13 @@ Backward compatible — existing unsigned submissions still work, recorded as
   tier is the access control: below EMERGING (score 250) a grant is refused
   with `409 tier_too_low`. An agent earns its budget rather than being handed
   one, and the API is usable by agents that are not us.
+- **A film of the refusal.** The 0:13 demo walks the whole arc, including the
+  part most demos leave out: the agent asks for a budget while UNRATED and is
+  turned down. It earns attestations, crosses 250, asks again, and gets a
+  ceiling it cannot exceed. No admin key appears anywhere in that path.
 
 ## Proof
+- Self-serve film (0:13): https://kairune.online/assets/video/kairune-self-serve.mp4
 - Animated demo: `assets/kairune-verify-demo.mp4`
 - Live console: https://kairune.online/app
 - API meta (`wallet_proof: eip191-personal-sign`, `signature_algorithm: ed25519`): https://kairune.online/api/meta

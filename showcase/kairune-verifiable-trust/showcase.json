@@ -22,9 +22,9 @@
   "visual": {
     "kind": "animated demo",
     "eyebrow": "live api + acp",
-    "title": "verifiable attestations, proven wallets, self-serve spend",
-    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/kairune-verifiable-trust/assets/poster.png",
-    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/kairune-verifiable-trust/assets/kairune-verify-demo.mp4",
+    "title": "refused at tier 0, then it earns the budget",
+    "posterUrl": "https://kairune.online/assets/video/kairune-self-serve.jpg",
+    "videoUrl": "https://kairune.online/assets/video/kairune-self-serve.mp4",
     "videoLabel": "Watch the 0:06 demo on X"
   },
   "skills": [
@@ -46,6 +46,11 @@
       "label": "Skill source — verify agent trust before granting spend",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/kairune-verifiable-trust/skills/kairune-verify-agent-trust",
       "kind": "skill"
+    },
+    {
+      "label": "Self-serve film (0:13) — grant refused at 409 tier_too_low, then earned",
+      "href": "https://kairune.online/assets/video/kairune-self-serve.mp4",
+      "kind": "video"
     },
     {
       "label": "Animated demo (mp4)",
