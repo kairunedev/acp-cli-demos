@@ -68,6 +68,11 @@
       "kind": "proof"
     },
     {
+      "label": "ERC-8126 derived adapter (not compliant) — 0-100 risk + per-type breakdown, EIP-191 WV partial",
+      "href": "https://kairune.online/api/agents/voyager-07/erc8126",
+      "kind": "proof"
+    },
+    {
       "label": "Example public trust card",
       "href": "https://kairune.online/a/voyager-07",
       "kind": "proof"

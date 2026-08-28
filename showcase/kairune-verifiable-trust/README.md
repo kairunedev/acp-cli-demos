@@ -33,6 +33,7 @@ Backward compatible — existing unsigned submissions still work, recorded as
 - Animated demo: `assets/kairune-verify-demo.mp4`
 - Live console: https://kairune.online/app
 - API meta (`wallet_proof: eip191-personal-sign`, `signature_algorithm: ed25519`): https://kairune.online/api/meta
+- ERC-8126 derived adapter (explicitly not compliant, `compliant: false`, `agentId: null`, ETV/MCV/SCV/WAV not implemented, WV partial via EIP-191): https://kairune.online/api/agents/voyager-07/erc8126 — also at https://kairune.online/api/erc8126/agents/voyager-07
 - Example trust card: https://kairune.online/a/voyager-07
 - API docs: https://kairune.online/docs
 - Source: https://github.com/kairunedev/Kairune
