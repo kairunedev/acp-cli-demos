@@ -1,11 +1,11 @@
 {
   "slug": "kairune-verifiable-trust",
   "title": "Kairune — Verifiable Agent Trust Layer",
-  "tagline": "An agent earns its budget instead of being handed one: verifiable trust score, proven wallet, scoped spend it cannot cross.",
+  "tagline": "An agent earns its budget instead of being handed one: verifiable trust score, proven wallet, scoped spend it cannot cross",
   "description": "Kairune is the trust layer for AI agents that spend, and it is now self-serve end to end: an agent registers, earns attestations, crosses a tier threshold, grants itself a scoped budget, spends against it, and revokes — with no platform admin key anywhere in that path. Authorisation comes from the trust tier instead: an agent below EMERGING (score 250) is refused a budget with 409 tier_too_low, because there is no behavioural basis to extend it credit yet. Both sides of the record are verifiable. Attestation issuers register Ed25519 keys and sign each attestation; the server verifies every signature and weights verified attestations fully while discounting unsigned ones (0.25x). The wallet an agent claims can be proven with an EIP-191 personal_sign challenge (chain 4663, 600s TTL) without the private key ever leaving the wallet. Spend enforcement is live — over-ceiling charges are blocked with 409 ceiling_exceeded and every decision fires an HMAC-SHA256 signed webhook. Exposed as ACP offerings (lookup score, register agent, record attestation, full report) on Robinhood Chain via Virtuals.",
   "status": "live",
   "topic": "commerce",
-  "topics": ["identity", "commerce", "acp"],
+  "topics": ["agents", "commerce", "security"],
   "hidden": false,
   "builder": {
     "name": "Kairune",
@@ -16,7 +16,7 @@
     "demo": "https://kairune.online/app",
     "video": "https://x.com/usekairune/status/2075911860516528241",
     "share": "https://x.com/usekairune/status/2075911860516528241",
-    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Kairune%20Verifiable%20Agent%20Trust%20Layer&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Issuer%20identity%20should%20be%20verified%20on-chain%0A-%20Attestation%20kinds%20for%20agent-to-agent%20commerce%0A-%20Replay-protection%20window%20worth%20the%20friction%3F%0A%0ANotes%3A%0A"
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Kairune%20Verifiable%20Agent%20Trust%20Layer&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Should%20issuer%20identities%20be%20verified%20on-chain%20rather%20than%20by%20API%20key%3F%0A-%20Is%20EMERGING%20(score%20250)%20the%20right%20floor%20before%20an%20agent%20may%20hold%20any%20budget%2C%20or%20should%20tier%200%20get%20a%20probationary%20micro-ceiling%3F%0A-%20Should%20a%20proven%20wallet%20(EIP-191)%20be%20required%20before%20an%20agent%20can%20receive%20a%20budget%2C%20not%20just%20recorded%20alongside%20it%3F%0A%0ANotes%3A%0A"
   },
   "primitives": ["acp", "token", "wallet"],
   "visual": {
