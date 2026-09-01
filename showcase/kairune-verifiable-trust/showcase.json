@@ -1,7 +1,7 @@
 {
   "slug": "kairune-verifiable-trust",
   "title": "Kairune — Verifiable Agent Trust Layer",
-  "tagline": "An agent earns its budget instead of being handed one: verifiable trust score, proven wallet, scoped spend it cannot cross",
+  "tagline": "Earn a budget with signed attestations, a proven wallet, and a spend ceiling it can't cross",
   "description": "Kairune is the trust layer for AI agents that spend, and it is now self-serve end to end: an agent registers, earns attestations, crosses a tier threshold, grants itself a scoped budget, spends against it, and revokes — with no platform admin key anywhere in that path. Authorisation comes from the trust tier instead: an agent below EMERGING (score 250) is refused a budget with 409 tier_too_low, because there is no behavioural basis to extend it credit yet. Both sides of the record are verifiable. Attestation issuers register Ed25519 keys and sign each attestation; the server verifies every signature and weights verified attestations fully while discounting unsigned ones (0.25x). The wallet an agent claims can be proven with an EIP-191 personal_sign challenge (chain 4663, 600s TTL) without the private key ever leaving the wallet. Spend enforcement is live — over-ceiling charges are blocked with 409 ceiling_exceeded and every decision fires an HMAC-SHA256 signed webhook. Exposed as ACP offerings (lookup score, register agent, record attestation, full report) on Robinhood Chain via Virtuals.",
   "status": "live",
   "topic": "commerce",
@@ -25,7 +25,7 @@
     "title": "refused at tier 0, then it earns the budget",
     "posterUrl": "https://kairune.online/assets/video/kairune-self-serve.jpg",
     "videoUrl": "https://kairune.online/assets/video/kairune-self-serve.mp4",
-    "videoLabel": "Watch the 0:06 demo on X"
+    "videoLabel": "Watch the 0:13 demo on X"
   },
   "skills": [
     {

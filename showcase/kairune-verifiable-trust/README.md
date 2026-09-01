@@ -23,6 +23,14 @@ Backward compatible — existing unsigned submissions still work, recorded as
   tier is the access control: below EMERGING (score 250) a grant is refused
   with `409 tier_too_low`. An agent earns its budget rather than being handed
   one, and the API is usable by agents that are not us.
+- **Owner lock on spend authority.** Self-serve cut the admin key out of the
+  path, which also meant those routes accepted no credential at all — and a
+  permission id is public. An operator can now bind an agent to its wallet with
+  the same EIP-191 proof: once locked, every mutating permission route requires
+  a fresh single-use proof in `X-Owner-Proof` and refuses with `401` without
+  one. Reads and the spend dry-run stay open so a payment rail still gets a
+  go/no-go signal. It is opt-in, so an agent that never locks is still open —
+  making it mandatory would strand every agent registered before the feature.
 - **A film of the refusal.** The 0:13 demo walks the whole arc, including the
   part most demos leave out: the agent asks for a budget while UNRATED and is
   turned down. It earns attestations, crosses 250, asks again, and gets a
