@@ -2,7 +2,7 @@
   "slug": "kairune-verifiable-trust",
   "title": "Kairune — Verifiable Agent Trust Layer",
   "tagline": "Earn a budget with signed attestations, a proven wallet, and a spend ceiling it can't cross",
-  "description": "Kairune is the trust layer for AI agents that spend, and it is now self-serve end to end: an agent registers, earns attestations, crosses a tier threshold, grants itself a scoped budget, spends against it, and revokes — with no platform admin key anywhere in that path. Authorisation comes from the trust tier instead: an agent below EMERGING (score 250) is refused a budget with 409 tier_too_low, because there is no behavioural basis to extend it credit yet. Both sides of the record are verifiable. Attestation issuers register Ed25519 keys and sign each attestation; the server verifies every signature and weights verified attestations fully while discounting unsigned ones (0.25x). The wallet an agent claims can be proven with an EIP-191 personal_sign challenge (chain 4663, 600s TTL) without the private key ever leaving the wallet. Spend enforcement is live — over-ceiling charges are blocked with 409 ceiling_exceeded and every decision fires an HMAC-SHA256 signed webhook. Exposed as ACP offerings (lookup score, register agent, record attestation, full report) on Robinhood Chain via Virtuals.",
+  "description": "Kairune is a trust layer for AI agents that spend. It's self-serve end to end: an agent earns a trust score from signed attestations, proves wallet control via EIP-191, and is granted a spend budget based on its tier — no admin key required. Below EMERGING the grant is refused (409 tier_too_low); over-ceiling charges are blocked and every decision fires an HMAC-SHA256 signed webhook. An operator can lock an agent to its wallet: mutating routes then demand a fresh single-use X-Owner-Proof and return 401 without one, which @kairune/sdk@0.4.0 mints on the caller's behalf. Exposed as live APIs, paid ACP offerings on Robinhood Chain via Virtuals, and the SDK.",
   "status": "live",
   "topic": "commerce",
   "topics": ["agents", "commerce", "security"],
@@ -80,6 +80,11 @@
     {
       "label": "API docs — wallet proof, self-serve permissions, spend enforcement, signed webhooks",
       "href": "https://kairune.online/docs",
+      "kind": "docs"
+    },
+    {
+      "label": "SDK on npm — @kairune/sdk@0.4.0, zero dependencies, lockAgent() plus auto-proof retry on 401",
+      "href": "https://www.npmjs.com/package/@kairune/sdk",
       "kind": "docs"
     },
     {

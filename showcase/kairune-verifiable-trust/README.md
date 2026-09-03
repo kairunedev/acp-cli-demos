@@ -31,6 +31,12 @@ Backward compatible — existing unsigned submissions still work, recorded as
   one. Reads and the spend dry-run stay open so a payment rail still gets a
   go/no-go signal. It is opt-in, so an agent that never locks is still open —
   making it mandatory would strand every agent registered before the feature.
+- **A published SDK.** `@kairune/sdk@0.4.0` on npm, zero dependencies, native
+  `fetch`. Pass a `signOwnerMessage` signer once and `lockAgent()`,
+  `unlockAgent()` and `getOwnerLock()` are available; every mutating call that
+  comes back `401` because the agent turned out to be locked is signed and
+  retried exactly once. An unlocked agent pays nothing for this — no extra
+  round trip is made unless the server actually refuses.
 - **A film of the refusal.** The 0:13 demo walks the whole arc, including the
   part most demos leave out: the agent asks for a budget while UNRATED and is
   turned down. It earns attestations, crosses 250, asks again, and gets a
@@ -38,6 +44,7 @@ Backward compatible — existing unsigned submissions still work, recorded as
 
 ## Proof
 - Self-serve film (0:13): https://kairune.online/assets/video/kairune-self-serve.mp4
+- SDK on npm (`@kairune/sdk@0.4.0`): https://www.npmjs.com/package/@kairune/sdk
 - Animated demo: `assets/kairune-verify-demo.mp4`
 - Live console: https://kairune.online/app
 - API meta (`wallet_proof: eip191-personal-sign`, `signature_algorithm: ed25519`): https://kairune.online/api/meta
